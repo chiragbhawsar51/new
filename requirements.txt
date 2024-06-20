@@ -33,7 +33,7 @@ mammoth
 MarkupSafe
 pymongo
 python-docx
-pywin32
+pywin32==223
 requests
 six
 soupsieve
