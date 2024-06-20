@@ -1,0 +1,245 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    background: url('ssss.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+}
+.info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+.main {
+    width: auto;
+    margin: auto;
+}
+.main-1 h2 {
+    color: black;
+    text-align: center;
+    font-size: 26px;
+}
+
+.main-1 p {
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    font-family: cursive;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-row .form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-row .form-group:last-child {
+    margin-right: 0;
+}
+
+.form-group label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+.main-1 {
+    width: 40%;
+    height: 500px;
+}
+.main-2 {
+    width: 60%;
+}
+.main-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+button {
+    margin-bottom: 1rem;
+}
+.main {
+    display: flex;
+    padding: 0 5rem;
+    gap: 3rem;
+}
+
+.main-1 {
+    background: bisque;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+}
+.logo {
+    margin: 0 auto;
+    width: 30%;
+}
+.logo img {
+    width: 100%;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for dynamic record inputs */
+#records h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+#records label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+#records input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+
+    .btn-submit {
+        padding: 10px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 8px;
+    }
+
+    .btn-submit {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+
+    .input-row .form-group {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .input-row .form-group:last-child {
+        margin-bottom: 0;
+    }
+.pdf-list-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.pdf-list-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.pdf-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.pdf-list li {
+    margin: 5px 0;
+}
+
+.pdf-list a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+.pdf-list a:hover {
+    color: #0056b3;
+}
+}
