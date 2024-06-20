@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>View PDF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylessss.css') }}">
+</head>
+<body>
+    <h1>Viewing: {{ filename }}</h1>
+    {% if username %}
+        <p>Uploaded by: {{ username }}</p>
+    {% endif %}
+    <iframe src="{{ url_for('serve_pdf', filename=filename) }}" width="100%" height="600px"></iframe>
+    <br>
+    <a href="{{ url_for('download_pdf', filename=filename) }}">Download PDF</a>
+</body>
+</html>

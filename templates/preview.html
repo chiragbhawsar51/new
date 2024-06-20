@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesss.css') }}">
+    <title>Preview PDF</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Preview</h2>
+      <div class="content">
+        {{ html_content|safe }}
+      </div>
+      <a class="btn" href="{{ url_for('download_pdf', filename=filename) }}">Download PDF</a>
+    </div>
+  </body>
+</html>

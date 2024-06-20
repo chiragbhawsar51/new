@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styless.css') }}">
+    <title>View Stored PDFs</title>
+</head>
+<body>
+    <h1>Stored PDFs</h1>
+    <ul>
+        {% for pdf_file in pdf_files %}
+            <li>
+                <a href="#" onclick="downloadPdf('{{ pdf_file }}')">{{ pdf_file }}</a>
+                <a href="{{ url_for('view_pdf', filename=pdf_file) }}">View</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <form id="downloadForm" action="{{ url_for('download_pdf', filename='') }}" method="post" style="display: none;">
+        <input type="hidden" id="pdf_filename" name="filename">
+    </form>
+
+    <script>
+        function downloadPdf(filename) {
+            document.getElementById('pdf_filename').value = filename;
+            document.getElementById('downloadForm').submit();
+        }
+    </script>
+</body>
+</html>

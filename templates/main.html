@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integral Solutions</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylle.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><img src="static/logo.jpeg"></div>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="{{ url_for('login') }}">Office Portal</a></li>
+                <li><a href="#Office Portal">Office Portal</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your IT Solutions Partner</h1>
+            <p>Providing innovative IT solutions to boost your business performance.</p>
+            <a href="#contact" class="cta-button">Get a Quote</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We are a dedicated team of IT professionals committed to delivering top-notch solutions to our clients.</p>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-content">
+            <div class="service-text">
+                <div class="service-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Automation Engineer</h3>
+                    <p>Our automation engineers streamline your processes to increase efficiency and reduce costs.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Validation Engineer</h3>
+                    <p>We ensure your systems meet all regulatory standards and function as intended.</p>
+                </div>
+            </div>
+            <div class="service-images">
+                <img src="static/reva.jpg" alt="Services Image">
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Our Projects</h2>
+        <p>Take a look at some of our successful projects.</p>
+        <div class="projects-img">
+            <div class="p-img">
+                <div class="project-item">
+                    <img src="static/img2.jpg" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aspernatur eum mollitia accu</p>
+                </div>
+                <div class="project-item">
+                    <img src="static/img2.jpg" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aspernatur eum mollitia accu</p>
+                </div>
+                <div class="project-item">
+                    <img src="static/img2.jpg" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aspernatur eum mollitia accu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 IT Office. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

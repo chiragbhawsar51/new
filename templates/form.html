@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">  
+    <title>Generate Cover Letter</title>
+    <br>
+    <a href="{{ url_for('list_pdfs') }}">List PDFs</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</head>
+<body>
+    {% if session.username %}
+<p>Welcome, {{ session.username }}! <a href="{{ url_for('logout') }}">Logout</a></p>
+{% endif %}
+    <h1>Generate Cover Letter</h1>
+    <div class="main">
+        <div class="main-1">
+            <h2>Any problem</h2>
+            <p>Get in touch- CHIRAG</p>
+            <div class="info">
+                <img width="24" height="24" src="https://img.icons8.com/material-rounded/24/address.png" alt="address"/>
+                <p>47, G.S Plaza, Scheme No. 78, near Axis Bank, Scheme Number 78, Part II, Vijay Nagar, Indore,</p>
+            </div>
+            <div class="info">
+                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/phone--v1.png" alt="phone--v1"/>
+                <p>9752406389</p>
+            </div>
+            <div class="info">
+                <img width="24" height="24" src="https://img.icons8.com/material-rounded/24/mail.png" alt="mail"/>
+                <p>chiragbhawsar51@gmail.com</p>
+            </div>
+            <div class="logo">
+                <img src="static/logo.jpeg" alt="Company Logo">
+            </div>
+        </div>
+        <div class="main-2">
+            <form method="POST">
+                <div class="input-row">
+                    <div class="form-group">
+                        <label for="offer_name">Offer Name:</label>
+                        <input type="text" id="offer_name" name="offer_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="offer_no">Offer Number:</label>
+                        <input type="text" id="offer_no" name="offer_no" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="form-group">
+                        <label for="company_name">Company Name:</label>
+                        <input type="text" id="company_name" name="company_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city_name">City Name:</label>
+                        <input type="text" id="city_name" name="city_name" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="form-group">
+                        <label for="state_name">State Name:</label>
+                        <input type="text" id="state_name" name="state_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="manager_name">Manager Name:</label>
+                        <input type="text" id="manager_name" name="manager_name" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="form-group">
+                        <label for="enquiry_sub">Enquiry Subject:</label>
+                        <input type="text" id="enquiry_sub" name="enquiry_sub" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="delivery_dates">Delivery Dates:</label>
+                        <input type="text" id="delivery_dates" name="delivery_dates" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="form-group">
+                        <label for="your_name">Your Name:</label>
+                        <input type="text" id="your_name" name="your_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_no">Contact No:</label>
+                        <input type="text" id="contact_no" name="contact_no" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="records_count">Number of Records:</label>
+                    <input type="number" id="records_count" name="records_count" required>
+                </div>
+                <div id="records">
+                    <!-- JavaScript will dynamically add record inputs here -->
+                </div>
+                <div class="main-button">
+                    <button type="button" onclick="addRecordInputs()">Add Records</button>
+                    <input type="submit" value="Preview Document">
+    </form>
+    
+       <!-- Display stored PDFs -->
+       <section class="pdf-list-section">
+        <h2>Stored PDFs</h2>
+        <ul class="pdf-list">
+            {% for pdf in stored_pdfs %}
+                <li><a href="{{ url_for('serve_pdf', filename=pdf.filename) }}">{{ pdf.filename }}</a></li>
+            {% endfor %}
+        </ul>
+
+
+    </ul>
+    <script>
+        function addRecordInputs() {
+            var count = document.getElementById('records_count').value;
+            var container = document.getElementById('records');
+            container.innerHTML = '';
+            for (var i = 0; i < count; i++) {
+                container.innerHTML += `<h3>Record ${i+1}</h3>`;
+                container.innerHTML += `<label for="sn_${i}">S.no:</label>`;
+                container.innerHTML += `<input type="text" id="sn_${i}" name="sn_${i}" required><br><br>`;
+                container.innerHTML += `<label for="description_${i}">Description:</label>`;
+                container.innerHTML += `<input type="text" id="description_${i}" name="description_${i}" required><br><br>`;
+                container.innerHTML += `<label for="rate_${i}">Rate:</label>`;
+                container.innerHTML += `<input type="number" id="rate_${i}" name="rate_${i}" required step="0.01"><br><br>`;
+                container.innerHTML += `<label for="quantity_${i}">Quantity:</label>`;
+                container.innerHTML += `<input type="number" id="quantity_${i}" name="quantity_${i}" required step="0.01"><br><br>`;
+            }
+        }
+    </script>
+</body>
+</html>
