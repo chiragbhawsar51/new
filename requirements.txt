@@ -40,4 +40,5 @@ SQLAlchemy
 urllib3
 Werkzeug
 WTForms
+pywin32==224
 
